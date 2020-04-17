@@ -23,7 +23,7 @@ end
 
 def render(left, right, top, bottom, step_x, step_y, max) String
   result = [] of String
-  result << "\e[2J\e[0;0H"
+  result << "\e[0;0H"
   top.step(to: bottom, by: step_y) do |y|
     # puts "y: #{y}"
     left.step(to: right, by: step_x) do |x|
@@ -46,7 +46,6 @@ end
 def zoomer(rows, cols, mid_x, mid_y, zoom, max : Int32) String
 
   mid_x0, mid_y0, zoom0, max0 = mid_x, mid_y, zoom, max
-  size            = `stty size`.split
   view_width, view_height = cols.to_i - 1, rows.to_i - 3
 
   # use alternate terminal screen output

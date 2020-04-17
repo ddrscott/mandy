@@ -1,4 +1,4 @@
-FROM crystallang/crystal
+FROM crystallang/crystal:0.28.0
 MAINTAINER Scott Pierce <ddrscott@gmail.com>
 
 ADD . /src
